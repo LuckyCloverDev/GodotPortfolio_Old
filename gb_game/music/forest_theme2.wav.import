@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/forest_theme2.wav-fc02a40957f9a996de9857b87a094344.sample"
+
+[deps]
+
+source_file="res://music/forest_theme2.wav"
+dest_files=[ "res://.import/forest_theme2.wav-fc02a40957f9a996de9857b87a094344.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

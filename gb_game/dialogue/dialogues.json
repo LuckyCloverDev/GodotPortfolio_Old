@@ -1,0 +1,153 @@
+{"dialogue":
+    {
+        "save_or_load":
+        [
+            {
+                "text" : "What would you like to do?",
+                "icon" : "froge0"
+            },
+            {
+                "text" : "",
+                "icon" : "",
+                "options" : [{"text" : "Save", "goto" : 2}, {"text" : "Load", "goto" : 3}]
+            },
+            {
+                "text" : "Game Saved!",
+                "icon" : "froge1",
+                "vars" : [["save"]],
+                "next_index" : 0
+            },
+            {
+                "text" : "Game Loaded!",
+                "icon" : "froge1",
+                "vars" : [["load"]],
+                "next_index" : 0
+            }
+        ],
+        "locked":
+        [
+            {
+                "text" : "The door is locked!",
+                "icon" : "keyhole",
+                "next_index" : 0
+            }
+        ],
+        "no_cave":
+        [
+            {
+                "text" : "The map says there should be a cave [shake]here...[/shake]",
+                "icon" : "test_icon3",
+                "next_index" : 0
+            }
+        ],
+        "testing":
+        [
+            {
+                "text" : "[wave]Hello there[/wave]",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "How do you do?",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "Don't bother answering, you must be amazing, considering how you bask in my [wave]glorious light.[/wave]",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "...",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "...",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "...",
+                "icon" : "test_icon2"
+            },
+            {
+                "text" : "Oh, go [shake]bother[/shake] someone else. My time is too [wave]precious[/wave] to waste it all on you.",
+                "icon" : "test_icon2"
+            },
+            {
+                "text" : "",
+                "icon" : "",
+                "options" : [{"text" : "Leave", "goto" : 8}, {"text" : "Stay", "goto" : 11}]
+            },
+            {
+                "text" : "Thank you very much.",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "...",
+                "icon" : "test_icon1"
+            },
+            {
+                "text" : "I [shake]said[/shake] you can go now.",
+                "icon" : "test_icon2",
+                "next_index" : 11
+            },
+            {
+                "text" : "I said [shake]leave me alone![/shake]",
+                "icon" : "test_icon2",
+                "next_index" : 11
+            }
+        ],
+        "testing2":
+        [
+            {
+                "text" : "This is different!",
+                "icon" : "test_icon2"
+            },
+            {
+                "text" : "",
+                "icon" : "",
+                "options" : [{"text" : "Yes", "goto" : 2}, {"text" : "No", "goto" : 2}, {"text" : "Maybe", "goto" : 2}]
+            },
+            {
+                "text" : "It works!",
+                "icon" : "test_icon1",
+                "next_index" : 2
+            }
+        ],
+        "testing3":
+        [
+            {
+                "text" : "Who... [shake]Who[/shake] are you?",
+                "icon" : "test_icon3"
+            },
+            {
+                "text" : "No one has visited this old shrine in years...",
+                "icon" : "test_icon3"
+            },
+            {
+                "text" : "I... I simply can't... [wave]remember...[/wave] when someone else was here...",
+                "icon" : "test_icon3"
+            },
+            {
+                "text" : "How.. did [shake]you[/shake] get here..?",
+                "icon" : "test_icon3"
+            },
+            {
+                "text" : "",
+                "icon" : "",
+                "options" : [{"text" : "I can't remember", "goto" : 5}]
+            },
+            {
+                "text" : "Intriguing... could you be... [wave]THE one[/wave]?",
+                "icon" : "test_icon3"
+            },
+            {
+                "text" : "Go on ahead... I'm sure you'll do great things...",
+                "icon" : "test_icon1",
+                "next_index" : 7
+            },
+            {
+                "text" : "Great things...",
+                "icon" : "test_icon1",
+                "next_index" : 7
+            }
+        ]
+    }
+}

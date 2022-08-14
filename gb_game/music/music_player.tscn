@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://music/forest_theme2.wav" type="AudioStream" id=1]
+[ext_resource path="res://music/music_player.gd" type="Script" id=2]
+
+[node name="music_player" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="tween_out" type="Tween" parent="."]
+
+[node name="tween_in" type="Tween" parent="."]
+
+[node name="forest_theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+[connection signal="tween_completed" from="tween_out" to="." method="_on_Tween_tween_completed"]
+[connection signal="tween_completed" from="tween_in" to="." method="_on_tween_in_tween_completed"]
+[connection signal="finished" from="forest_theme" to="." method="replay_song"]

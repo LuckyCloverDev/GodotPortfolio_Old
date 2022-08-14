@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://player/gb_character.png" type="Texture" id=1]
+[ext_resource path="res://player/Player.gd" type="Script" id=2]
+[ext_resource path="res://dialogue/dialogue_box.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 5, 4 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 6 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 3, 2 ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( 8, 8 )
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="dialogue_box" parent="CanvasLayer" instance=ExtResource( 3 )]
+visible = false
+margin_top = 56.0
+margin_bottom = 96.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 2
+
+[node name="player_collision" type="Area2D" parent="."]
+
+[node name="player_collision_box" type="CollisionShape2D" parent="player_collision"]
+position = Vector2( 0, 4 )
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="speech_box" type="Area2D" parent="."]
+position = Vector2( 0, 8 )
+
+[node name="speech_collider" type="CollisionShape2D" parent="speech_box"]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/walkdown = SubResource( 3 )
+anims/walkleft = SubResource( 4 )
+anims/walkright = SubResource( 5 )
+anims/walkup = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 264
+limit_bottom = 224
+limit_smoothed = true
+
+[node name="D" type="RayCast2D" parent="."]
+position = Vector2( 4, 4 )
+enabled = true
+cast_to = Vector2( 0, 6 )
+
+[node name="D2" type="RayCast2D" parent="."]
+position = Vector2( -4, 4 )
+enabled = true
+cast_to = Vector2( 0, 6 )
+
+[node name="U" type="RayCast2D" parent="."]
+position = Vector2( 4, 4 )
+enabled = true
+cast_to = Vector2( 0, -6 )
+
+[node name="U2" type="RayCast2D" parent="."]
+position = Vector2( -4, 4 )
+enabled = true
+cast_to = Vector2( 0, -6 )
+
+[node name="R" type="RayCast2D" parent="."]
+position = Vector2( 0, 4 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+
+[node name="L" type="RayCast2D" parent="."]
+position = Vector2( 0, 4 )
+enabled = true
+cast_to = Vector2( -10, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+[connection signal="area_entered" from="speech_box" to="." method="_on_speech_box_area_entered"]
+[connection signal="area_exited" from="speech_box" to="." method="_on_speech_box_area_exited"]
+[connection signal="body_entered" from="speech_box" to="." method="_on_speech_box_body_entered"]
+[connection signal="body_exited" from="speech_box" to="." method="_on_speech_box_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
