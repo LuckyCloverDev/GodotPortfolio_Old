@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/noto_sans_28.tres" type="DynamicFont" id=1]
+[ext_resource path="res://game_response/Response.gd" type="Script" id=2]
+
+[node name="Response" type="Label"]
+margin_right = 984.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Game Response"
+autowrap = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="type_timer" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+[connection signal="timeout" from="type_timer" to="." method="_on_type_timer_timeout"]

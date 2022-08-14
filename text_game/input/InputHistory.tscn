@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/noto_sans_italic_24.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="InputHistory" type="Label"]
+margin_right = 984.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 30 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.682353, 0.721569, 1 )
+text = "> Player input"
+__meta__ = {
+"_edit_use_anchors_": false
+}

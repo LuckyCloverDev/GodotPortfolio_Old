@@ -1,0 +1,225 @@
+{"dialogue":
+	{
+		"shop_keep_2a4":
+		[
+			{
+				"text" : "Shopkeeper: What would you like to buy?\n1. Apple - 10 Credits\n2. Waffle - 15 Credits\n3. Tempura - 25 Credits\n(Type 'no' or 'leave' if you've changed your mind and wish to leave!)",
+				"options":
+				[
+					{
+						"choice" : ["apple", "1"], "goto" : 1, "var_to_change" : [["money", -10, 2, ["inv", "apple"]]], "enabled" : true
+					},
+					{
+						"choice" : ["waffle", "2"], "goto" : 1, "var_to_change" : [["money", -15, 2, ["inv", "waffle"]]], "enabled" : true
+					},
+					{
+						"choice" : ["tempura", "3"], "goto" : 1, "var_to_change" : [["money", -25, 2, ["inv", "tempura"]]], "enabled" : true
+					},
+					{
+						"choice" : ["no", "nope", "nah", "n", "leave", "exit"], "goto" : 3, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Shopkeeper: Fantastic! Would you like to keep shopping?",
+				"options":
+				[
+					{
+						"choice" : ["yes", "yeah", "sure", "alright", "definitely", "y", "ye", "yea"], "goto" : 0, "enabled" : true
+					},
+					{
+						"choice" : ["no", "nope", "nah", "n"], "goto" : 3, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Shopkeeper: I'm sorry, but you don't have enough credits for that! Would you like to continue shopping?",
+				"options":
+				[
+					{
+						"choice" : ["yes", "yeah", "sure", "alright", "definitely", "y", "ye", "yea"], "goto" : 0, "enabled" : true
+					},
+					{
+						"choice" : ["no", "nope", "nah", "n"], "goto" : 3, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Shopkeeper: Have a nice day!",
+				"var_to_change" : [["conversation_finished", 0]]
+			}
+		],
+		"apple_man":
+		[
+			{
+				"text" : "Apple Mascot: Do you like apples?",
+				"options":
+				[
+					{
+						"choice" : ["yes"], "goto" : 1, "enabled" : true
+					},
+					{
+						"choice" : ["no"], "goto" : 8, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Apple Mascot: Delicious! Are your favorites the red ones?",
+				"options":
+				[
+					{
+						"choice" : ["yes"], "goto" : 3, "enabled" : true
+					},
+					{
+						"choice" : ["no"], "goto" : 2, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Apple Mascot: Then are the green ones your favorite?",
+				"options":
+				[
+					{
+						"choice" : ["yes"], "goto" : 4, "enabled" : true
+					},
+					{
+						"choice" : ["no"], "goto" : 5, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Apple Mascot: Those are really sweet and soft, a little bit too much so.",
+				"var_to_change" : [["conversation_finished", 9]]
+			},
+			{
+				"text" : "Apple Mascot: Those are really sour and crunchy! How can you stand it?",
+				"var_to_change" : [["conversation_finished", 9]]
+			},
+			{
+				"text" : "Apple Mascot: So it must be yellow, right?",
+				"options":
+				[
+					{
+						"choice" : ["yes"], "goto" : 6, "enabled" : true
+					},
+					{
+						"choice" : ["no"], "goto" : 7, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Apple Mascot: The obviously correct choice, these ones are simply perfect! Have one, free of charge!",
+				"var_to_change" : [["conversation_finished", 9], ["inv", "apple"]]
+			},
+			{
+				"text" : "Apple Mascot: I don't think it's apples you like. You're a strange one",
+				"var_to_change" : [["conversation_finished", 9]]
+			},
+			{
+				"text" : "Apple Mascot: Then this conversation is over!",
+				"var_to_change" : [["conversation_finished", 9], ["money", 500]]
+			},
+			{
+				"text" : "Apple Mascot: We already talked, didn't we?"
+			}
+		],
+		"shady_guy":
+		[
+			{
+				"text" : "Shady Guy: ...",
+				"options":
+				[
+					{
+						"choice" : ["yell"], "goto" : 1, "enabled" : true
+					},
+					{
+						"choice" : ["disco"], "goto" : 2, "enabled" : true
+					}
+				]
+			},
+			{
+				"text" : "Shady Guy: Ugh, please quiet down, I have a raging headache...",
+				"var_to_change" : [["conversation_finished", 3], ["option_enable", "bouncer", 0, 3, true], ["magic", -20]]
+			},
+			{
+				"text" : "Shady Guy: Nobody asked for your dumb dances, kid.",
+				"var_to_change" : [["conversation_finished", 3], ["magic", -40]]
+			},
+			{
+				"text" : "Shady Guy: Just leave me alone please."
+			},
+			{
+				"text" : "Shady Guy: Why'd you yell at my man, the bouncer, too?",
+				"var_to_change" : [["conversation_finished", 3]]
+			}
+		],
+		"bouncer":
+		[
+			{
+				"text" : "Bouncer: Get lost, kid. You don't have the password, do ya?",
+				"options":
+				[
+					{
+						"choice" : ["yes"], "goto" : 1, "enabled" : true
+					},
+					{
+						"choice" : ["no"], "goto" : 2, "enabled" : true
+					},
+					{
+						"choice" : ["sarsparilla"], "goto" : 3, "enabled" : true
+					},
+					{
+						"choice" : ["yell"], "goto": 4, "enabled" : false
+					}
+				]
+			},
+			{
+				"text" : "Bouncer: Just saying you have the password doesn't do much. Come back when you can recite it to me.",
+				"var_to_change" : [["conversation_finished", 5]]
+			},
+			{
+				"text" : "Bouncer: Then as I said before: Get lost!",
+				"var_to_change" : [["conversation_finished", 5]]
+			},
+			{
+				"text" : "Bouncer: Well whadya know, you actually knew the password. Guess I gotta let ya in.",
+				"var_to_change" : [["conversation_finished", 6], ["map", "b1", "RIGHT", "b2", "LEFT", false]]
+			},
+			{
+				"text" : "Bouncer: Didya really have to do that? That seems excessive.",
+				"var_to_change" : [["person", "shady_guy", 4], ["conversation_finished", 5]]
+			},
+			{
+				"text" : "Bouncer: Back again are ya? Do you have the password or are you just wasting my time?",
+				"options":
+				[
+					{
+						"choice" : ["yes"], "goto" : 1, "enabled" : true
+					},
+					{
+						"choice" : ["no"], "goto" : 2, "enabled" : true
+					},
+					{
+						"choice" : ["sarsparilla"], "goto" : 3, "enabled" : true
+					},
+					{
+						"choice" : ["yell"], "goto": 4, "enabled" : false
+					}
+				]
+			},
+			{
+				"text" : "Bouncer: Ya said the password, so you can go now. I ain't givin ya any hints about the location of the club."
+			}
+		],
+		"test_dummy":
+		[
+			{
+				"text" : "Here's a key!",
+				"var_to_change" : [["conversation_finished", 1], ["inv", "key1"]]
+			},
+			{
+				"text" : "Greedy! I already gave you the key!"
+			}
+		]
+	}
+}

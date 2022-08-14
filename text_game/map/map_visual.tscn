@@ -1,0 +1,643 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://map/map_visual.gd" type="Script" id=2]
+[ext_resource path="res://fonts/noto_sans_italic_24.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.364706, 0.368627, 0.376471, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.364706, 0.368627, 0.376471, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.364706, 0.368627, 0.376471, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0588235, 0.0588235, 0.0627451, 1 )
+
+[node name="map_visual" type="PanelContainer"]
+margin_right = 240.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 240, 275 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mapMargin" type="MarginContainer" parent="."]
+margin_right = 240.0
+margin_bottom = 275.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mapMargin"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 235.0
+margin_bottom = 270.0
+
+[node name="mapBoxes" type="VBoxContainer" parent="mapMargin/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 227.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="row1" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_right = 230.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="box1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_right = 42.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 42.0
+margin_right = 46.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 89.0
+margin_right = 93.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 136.0
+margin_right = 140.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 183.0
+margin_right = 187.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row1"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="xSeparator1" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 42.0
+margin_right = 230.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator1"]
+margin_right = 42.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator1"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator1"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator1"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator1"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="row2" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 46.0
+margin_right = 230.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="box1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_right = 42.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 42.0
+margin_right = 46.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 89.0
+margin_right = 93.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 136.0
+margin_right = 140.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 183.0
+margin_right = 187.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row2"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="xSeparator2" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 88.0
+margin_right = 230.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator2"]
+margin_right = 42.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator2"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator2"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator2"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator2"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="row3" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 92.0
+margin_right = 230.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="box1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_right = 42.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 42.0
+margin_right = 46.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 89.0
+margin_right = 93.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 136.0
+margin_right = 140.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 183.0
+margin_right = 187.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row3"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="xSeparator3" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 134.0
+margin_right = 230.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator3"]
+margin_right = 42.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator3"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator3"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator3"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator3"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="row4" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 138.0
+margin_right = 230.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="box1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_right = 42.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 42.0
+margin_right = 46.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 89.0
+margin_right = 93.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 136.0
+margin_right = 140.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 183.0
+margin_right = 187.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row4"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="xSeparator4" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 180.0
+margin_right = 230.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator4"]
+margin_right = 42.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator4"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator4"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator4"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="separator5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/xSeparator4"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="row5" type="HBoxContainer" parent="mapMargin/VBoxContainer/mapBoxes"]
+margin_top = 184.0
+margin_right = 230.0
+margin_bottom = 227.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="box1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_right = 42.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator1" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 42.0
+margin_right = 46.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator2" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 89.0
+margin_right = 93.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 93.0
+margin_right = 136.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator3" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 136.0
+margin_right = 140.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 140.0
+margin_right = 183.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="separator4" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 183.0
+margin_right = 187.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 4, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="box5" type="PanelContainer" parent="mapMargin/VBoxContainer/mapBoxes/row5"]
+margin_left = 187.0
+margin_right = 230.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="relevantInfo" type="PanelContainer" parent="mapMargin/VBoxContainer"]
+margin_top = 231.0
+margin_right = 230.0
+margin_bottom = 265.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 4 )
+
+[node name="text" type="Label" parent="mapMargin/VBoxContainer/relevantInfo"]
+margin_right = 230.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 4 )
+text = "Layer: 1"
+align = 1
+valign = 1
+autowrap = true
